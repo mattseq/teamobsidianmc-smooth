@@ -74,7 +74,7 @@ export default function Team({ className }: { className: string }) {
                                     href={link.href}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="text-obsidian-black hover:underline"
+                                    className="text-obsidian-purple hover:underline"
                                 >
                                     {link.label}
                                 </a>

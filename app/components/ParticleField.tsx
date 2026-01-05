@@ -51,13 +51,13 @@ export default function ParticleField( { className }: { className?: string } ) {
             gsap.to(
                 `#particle-${i}`,
                 {
-                    y: Math.random() * 300 - 150,
+                    y: Math.random() * 400 - 200,
                     rotate: Math.random() * 360,
                     ease: "sine.inOut",
                     scrollTrigger: {
                         trigger: "#team",
                         start: "top 100%",
-                        end: "top -200%",
+                        end: "top -300%",
                         scrub: true,
                     }
                 }

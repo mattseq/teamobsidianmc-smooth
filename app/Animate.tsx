@@ -7,6 +7,22 @@ gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(Observer);
 
 export default function Animate() {
+
+    // Logo Animation
+    gsap.fromTo("#logo", 
+        { scale: 0.5 },
+        {
+            scale: 1,
+            ease: "back.out",
+            scrollTrigger: {
+                trigger: "#logo",
+                start: "top 90%",
+                end: "top 50%",
+                scrub: true,
+            }
+        }
+    );
+    
     // Team Member Hover Animations
     document.querySelectorAll(".member-container").forEach((container) => {
         const name = container.getAttribute("data-member");
@@ -72,4 +88,18 @@ export default function Animate() {
             scrub: true,
         }
     });
+
+    gsap.fromTo("#inhabitants-img",
+        { scale: 0 },
+        {
+            scale: 1,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: "#inhabitants-img",
+                start: "top 80%",
+                end: "top 50%",
+                scrub: true,
+            }
+        }
+    )
 }
