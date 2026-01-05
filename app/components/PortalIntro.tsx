@@ -7,10 +7,10 @@ import { useEffect, useRef, useState } from 'react'
 gsap.registerPlugin(ScrollTrigger);
 
 const images = Array.from({ length: 31 }, (_, i) => 
-    `/animation/${(i + 1).toString().padStart(4, '0')}.png`
+    `/portal_animation/${(i + 1).toString().padStart(4, '0')}.png`
 );
 
-export default function Intro( { className }: { className?: string } ) {
+export default function PortalIntro( { className }: { className?: string } ) {
     const imgRef = useRef<HTMLImageElement>(null);
     const [progress, setProgress] = useState(0);
 
@@ -50,7 +50,7 @@ export default function Intro( { className }: { className?: string } ) {
         <img
             ref={imgRef}
             src={src}
-            alt="Scroll Animation"
+            alt="Entering Nether Portal Animation"
             className={className}
         />
     );
