@@ -11,7 +11,7 @@ export default function Home() {
         </div>
         <div id="team" className="relative w-full h-[200vh] text-center flex justify-center items-center">
           <img id="logo" src="/logo.png" className="w-[50%] z-10" alt="Team Obsidian Logo" />
-          <ParticleField className="absolute top-0 left-0 w-full h-[200vh] z-0"></ParticleField>
+          <ParticleField className="absolute top-0 left-0 w-full h-[200vh] z-10"></ParticleField>
         </div>
       </main>
   );

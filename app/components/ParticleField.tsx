@@ -37,7 +37,7 @@ export default function ParticleField( { className }: { className?: string } ) {
                     top: `${Math.random() * 80 + 10}%`,
                     left: `${Math.random() * 80 + 10}%`,
                     width: `${1*Math.random() + 1}%`,
-                    zIndex: 1,
+                    zIndex: Math.random() < 0.7 ? 5 : 15,
                 },
                 id: `particle-${i}`
             }))
@@ -51,8 +51,9 @@ export default function ParticleField( { className }: { className?: string } ) {
             gsap.to(
                 `#particle-${i}`,
                 {
-                    y: Math.random() * 200,
+                    y: Math.random() * 300 - 150,
                     rotate: Math.random() * 360,
+                    ease: "sine.inOut",
                     scrollTrigger: {
                         trigger: "#team",
                         start: "top 100%",
