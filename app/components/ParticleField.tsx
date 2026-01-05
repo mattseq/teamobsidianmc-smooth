@@ -37,7 +37,7 @@ export default function ParticleField( { className }: { className?: string } ) {
                     top: `${Math.random() * 80 + 10}%`,
                     left: `${Math.random() * 80 + 10}%`,
                     width: `${1*Math.random() + 1}%`,
-                    zIndex: Math.random() < 0.7 ? 5 : 15,
+                    zIndex: 0,
                 },
                 id: `particle-${i}`
             }))

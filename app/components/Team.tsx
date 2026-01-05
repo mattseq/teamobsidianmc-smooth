@@ -50,7 +50,7 @@ export default function Team({ className }: { className: string }) {
                 <div 
                     key={member.name}
                     data-member={member.name}
-                    className="member-container bg-transparent absolute w-70 flex flex-col items-center rounded-2xl p-4" 
+                    className="member-container bg-transparent absolute w-70 flex flex-col items-center rounded-3xl p-2" 
                     style={member.position}
                 >
                     {/* profile image */}
@@ -59,7 +59,7 @@ export default function Team({ className }: { className: string }) {
                         src={member.avatar}
                         alt={`${member.name} Avatar`}
                         data-member-avatar={member.name}
-                        className="w-32 h-32 rounded-full border-4 border-obsidian-purple shadow-lg mb-4"
+                        className="w-32 h-32 rounded-full border-4 border-obsidian-purple mb-4 mt-4"
                     />
 
                     {/* Hidden info that appears on hover */}

@@ -34,12 +34,28 @@ export default function Animate() {
             target: container,
             onHover: () => {
                 gsap.to(hide, { opacity: 1, duration: 0.3, ease: "power2.out" });
-                gsap.to(container, { backgroundColor: "var(--color-obsidian-purple)", duration: 0.3, ease: "power2.out" });
+                gsap.to(container, 
+                    { 
+                        backgroundColor: "var(--color-obsidian-glass)",
+                        border: "2px solid var(--color-obsidian-glass-outline)",
+                        duration: 0.3, 
+                        ease: "power2.out" 
+                    }
+                );
+                container.classList.add("backdrop-blur-sm");
                 gsap.to(avatar, { scale: 1.05, duration: 0.3, ease: "power2.out" });
             },
             onHoverEnd: () => {
                 gsap.to(hide, { opacity: 0, duration: 0.3, ease: "power2.inOut" });
-                gsap.to(container, { backgroundColor: "transparent", duration: 0.3, ease: "power2.out" });
+                gsap.to(container, 
+                    {
+                        backgroundColor: "rgba(0,0,0,0)",
+                        border: "rgba(0,0,0,0)",
+                        duration: 0.3, 
+                        ease: "power2.out" 
+                    }
+                );
+                container.classList.remove("backdrop-blur-sm");
                 gsap.to(avatar, { scale: 1, duration: 0.3, ease: "power2.out" });
             }
         });
