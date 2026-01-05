@@ -61,5 +61,15 @@ export default function Animate() {
         });
     });
 
-    
+    // Mods Section Curved Cover Animation
+    gsap.to("#curved-cover", {
+        borderRadius: "0%",
+        ease: "power1.inOut",
+        scrollTrigger: {
+            trigger: "#curved-cover",
+            start: "top 50%",
+            end: "top top",
+            scrub: true,
+        }
+    });
 }
