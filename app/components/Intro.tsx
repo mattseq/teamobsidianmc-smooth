@@ -10,7 +10,7 @@ const images = Array.from({ length: 31 }, (_, i) =>
     `/animation/${(i + 1).toString().padStart(4, '0')}.png`
 );
 
-export default function ScrollImage( { className }: { className?: string } ) {
+export default function Intro( { className }: { className?: string } ) {
     const imgRef = useRef<HTMLImageElement>(null);
     const [progress, setProgress] = useState(0);
 
@@ -37,10 +37,12 @@ export default function ScrollImage( { className }: { className?: string } ) {
         }
     }, []);
 
+    // if finished, don't render anything
     if (progress >= 1) {
         return null;
     }
 
+    // choose current image based on progress
     const index = Math.floor(progress * (images.length - 1));
     const src = images[index];
 
