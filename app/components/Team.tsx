@@ -67,13 +67,14 @@ export default function Team({ className }: { className: string }) {
                         <h3 className="text-2xl font-bold text-white">{member.name}</h3>
                         <p className="text-obsidian-light-purple mb-2">{member.role}</p>
                         <p className="text-white mb-4 px-4">{member.description}</p>
-                        <div className="flex space-x-4">
+                        <div className="flex space-x-4 justify-center">
                             {member.links.map((link) => (
                                 <a
                                     key={link.label}
                                     href={link.href}
                                     target="_blank"
                                     rel="noopener noreferrer"
+                                    className="text-obsidian-black hover:underline"
                                 >
                                     {link.label}
                                 </a>
