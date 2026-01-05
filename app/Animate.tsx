@@ -102,4 +102,36 @@ export default function Animate() {
             }
         }
     )
+
+    const carousel = document.getElementById("inhabitants-carousel");
+    if (carousel) {
+        const cards = Array.from(carousel.getElementsByClassName("mob-card"));
+        gsap.set(carousel, { perspective: 1200 });
+        cards.forEach((card, i) => {
+            gsap.set(card, {
+                opacity: i === 0 ? 1 : 0
+            });
+        });
+
+        ScrollTrigger.create({
+            trigger: "#inhabitants-wrapper",
+            start: "top top",
+            end: "bottom bottom",
+            scrub: true,
+            onUpdate: (self) => {
+                const progress = self.progress;
+                const totalCards = cards.length;
+                const cardIndex = Math.min(Math.floor(progress * totalCards), totalCards - 1);
+                cards.forEach((card, i) => {
+                    if (i < cardIndex) {
+                        gsap.to(card, { rotateX: -90, opacity: 0, duration: 1, ease: "power2.out" });
+                    } else if (i === cardIndex) {
+                        gsap.to(card, { rotateX: 0, opacity: 1, duration: 1, ease: "power2.out" });
+                    } else {
+                        gsap.to(card, { rotateX: 90, opacity: 0, duration: 1, ease: "power2.out" });
+                    }
+                });
+            }
+        });
+    }
 }

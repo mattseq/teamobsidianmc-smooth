@@ -3,6 +3,7 @@ import AnimationWrapper from "./AnimationProvider";
 import PortalIntro from "./components/PortalIntro";
 import ParticleField from "./components/ParticleField";
 import Team from "./components/Team";
+import InhabitantsCarousel from "./components/InhabitantsCarousel";
 
 export default function Home() {
   return (
@@ -18,22 +19,24 @@ export default function Home() {
                 filter: "blur(100px)",
             }}
           />
-          <img id="logo" src="/logo.png" className="w-[50%] mt-[30%] z-10" alt="Team Obsidian Logo" />
+          <img id="logo" src="/logo.png" className="w-[50%] mt-[20%] z-10" alt="Team Obsidian Logo" />
           <ParticleField className="absolute top-0 left-0 w-full h-[350vh] z-10"></ParticleField>
           <Team className="relative w-full h-screen mt-[30vh] z-20"></Team>
           
         </div>
-        <div id="mods-transition" className="relative w-full h-[500vh] bg-obsidian-purple">
+        <div id="inhabitants-transition" className="relative w-full h-fit bg-obsidian-purple rounded-b-3xl">
           <div id='curved-cover' className='absolute -top-[20vh] w-full h-[25vh] bg-obsidian-purple rounded-t-[50%]'/>
-          <div id='mods' className='h-full flex flex-col flex-wrap pt-[10vh]'>
-            <div id="inhabitants-section" className="mt-[5vh] w-full h-[300vh] flex flex-col items-center">
-              <img id="inhabitants-img" src="/mods/inhabitants.png" alt="" className="sticky top-[30%] w-[50%]" />
-              <h1 id="inhabitants-header" className="top-10 text-5xl text-left w-full">Inhabitants</h1>
-              <div className="inhabitants-intro">
-                
-              </div>
+          <div id='inhabitants-wrapper' className='h-[600vh] pt-[10vh]'>
+            <div id="inhabitants-section" className="sticky top-10 mt-[5vh] w-full h-screen flex flex-col items-center">
+              {/* <img id="inhabitants-img" src="/mods/inhabitants.png" alt="" className="sticky top-[30%] w-[50%]" /> */}
+              <h1 id="inhabitants-header" className=" text-4xl text-center w-full">Our Debut Mod<br /><strong className="text-6xl">Inhabitants</strong></h1>
+              <InhabitantsCarousel className="w-full flex flex-col items-center mt-10"/>
             </div>
           </div>
+        </div>
+
+        <div id="trinkets" className="w-full h-[300vh] bg-obsidian-black ">
+
         </div>
       </main>
   );

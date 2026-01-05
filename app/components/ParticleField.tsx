@@ -31,7 +31,6 @@ export default function ParticleField( { className }: { className?: string } ) {
         hydrated ? (
             Array.from({ length: PARTICLE_COUNT }, (_, i) => ({
                 src: images[Math.floor(Math.random() * images.length)],
-                // style: `top-[${Math.random() * 100}%] left-[${Math.random() * 100}%] w-${20 + Math.random() * 30}px opacity-${0.5 + Math.random() * 0.5} z-1`
                 style: {
                     position: 'absolute' as const,
                     top: `${Math.random() * 80 + 10}%`,
@@ -51,8 +50,7 @@ export default function ParticleField( { className }: { className?: string } ) {
             gsap.to(
                 `#particle-${i}`,
                 {
-                    y: Math.random() * 400 - 200,
-                    rotate: Math.random() * 360,
+                    y: Math.random() * 400 - 300,
                     ease: "sine.inOut",
                     scrollTrigger: {
                         trigger: "#team",
