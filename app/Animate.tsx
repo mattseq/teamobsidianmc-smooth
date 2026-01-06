@@ -103,9 +103,12 @@ export default function Animate() {
         }
     )
 
+
+    // Inhabitants Carousel Animation
     const carousel = document.getElementById("inhabitants-carousel");
     if (carousel) {
         const cards = Array.from(carousel.getElementsByClassName("mob-card"));
+        const dots = document.getElementById("inhabitants-carousel-dots")?.children;
         gsap.set(carousel, { perspective: 1200 });
         cards.forEach((card, i) => {
             gsap.set(card, {
@@ -122,6 +125,21 @@ export default function Animate() {
                 const progress = self.progress;
                 const totalCards = cards.length;
                 const cardIndex = Math.min(Math.floor(progress * totalCards), totalCards - 1);
+
+                // Update dots
+                if (dots) {
+                    Array.from(dots).forEach((dot, i) => {
+                        if (i === cardIndex) {
+                            dot.classList.add("bg-obsidian-purple", "scale-125", "border-obsidian-black");
+                            dot.classList.remove("bg-obsidian-purple-light", "border-obsidian-deep");
+                        } else {
+                            dot.classList.remove("bg-obsidian-purple", "scale-125", "border-obsidian-black");
+                            dot.classList.add("bg-obsidian-purple-light", "border-obsidian-deep");
+                        }
+                    });
+                }
+
+                // Animate cards
                 cards.forEach((card, i) => {
                     if (i < cardIndex) {
                         gsap.to(card, { rotateX: -90, opacity: 0, duration: 1, ease: "power2.out" });

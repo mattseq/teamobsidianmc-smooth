@@ -12,10 +12,8 @@
 
   --accent-glow: rgba(155, 77, 255, 0.6);
 
-  /* --obsidian-glass: rgba(112, 56, 186, 0.4); */
   --obsidian-glass: rgba(24, 16, 40, 0.6);
-  /* --obsidian-glass-outline: rgba(183, 113, 253, 0.8); */
-  --obsidian-glass-outline: rgba(112, 56, 186, 0.8); 
+  --obsidian-glass-outline: rgba(112, 56, 186, 0.8);
 
   margin: 0;
   padding: 0;
