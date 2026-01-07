@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const mobs = [
     { name: "Bogre", image: "/concept_showcases/bogre.png" },
     { name: "Warped Clam", image: "/concept_showcases/warped_clam.png" },
@@ -9,7 +11,7 @@ export default function InhabitantsCarousel({ className }: { className?: string 
         <div className={className} id="inhabitants-carousel">
             {
                 mobs.map((mob) => (
-                    <img src={mob.image} alt={mob.name} key={mob.name} className="absolute mob-card w-[50vw] mb-4 rounded-lg"/>
+                    <Image src={mob.image} alt={mob.name} key={mob.name} className="absolute mob-card w-[50vw] mb-4 rounded-lg" width={900} height={600}/>
                 ))
             }
             <div id="inhabitants-carousel-dots" className="absolute right-[20%] top-[25vh] flex flex-col gap-3 z-20">

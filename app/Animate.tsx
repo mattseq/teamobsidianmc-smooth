@@ -89,22 +89,8 @@ export default function Animate() {
         }
     });
 
-    gsap.fromTo("#inhabitants-img",
-        { scale: 0 },
-        {
-            scale: 1,
-            ease: "power2.out",
-            scrollTrigger: {
-                trigger: "#inhabitants-img",
-                start: "top 80%",
-                end: "top 50%",
-                scrub: true,
-            }
-        }
-    )
 
-
-    // Inhabitants Carousel Animation
+    // Inhabitants Carousel Animation (Pins Inhabitants Section)
     const carousel = document.getElementById("inhabitants-carousel");
     if (carousel) {
         const cards = Array.from(carousel.getElementsByClassName("mob-card"));
@@ -117,10 +103,11 @@ export default function Animate() {
         });
 
         ScrollTrigger.create({
-            trigger: "#inhabitants-wrapper",
-            start: "top top",
-            end: "bottom bottom",
+            trigger: "#inhabitants-section",
+            start: "top 3%",
+            end: "top -300%",
             scrub: true,
+            pin: true,
             onUpdate: (self) => {
                 const progress = self.progress;
                 const totalCards = cards.length;
