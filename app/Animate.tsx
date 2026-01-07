@@ -152,4 +152,45 @@ export default function Animate() {
             }
         });
     }
+    
+    // Inhabitants Description Text Animation
+    SplitText.create("#inhabitants-description", {
+        type: "lines",
+        autoSplit: true,
+        onSplit(self) {
+            return gsap.from(self.lines,
+                {
+                    autoAlpha: 0,
+                    y: 50,
+                    stagger: 0.25,
+                    scrollTrigger: {
+                        trigger: "#inhabitants-description",
+                        start: 'top 80%',
+                        end: 'top 0%',
+                        scrub: true,
+                    },
+                }
+            );
+        }
+    });
+
+    // Inhabitants Header Text Animation
+    SplitText.create("#inhabitants-header", {
+        type: "words, words",
+        mask: "lines",
+        autoSplit: true,
+        onSplit(self) {
+            return gsap.from(self.words, {
+                scrollTrigger: {
+                    trigger: "#inhabitants-header",
+                    start: 'top 80%',
+                    end: 'top 40%',
+                    scrub: true,
+                },
+                y: 100, 
+                autoAlpha: 0, 
+                stagger: 0.25
+            });
+        }
+    });
 }

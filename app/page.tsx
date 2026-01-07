@@ -1,5 +1,3 @@
-import Image from "next/image";
-import AnimationWrapper from "./AnimationProvider";
 import PortalIntro from "./components/PortalIntro";
 import ParticleField from "./components/ParticleField";
 import Team from "./components/Team";
@@ -27,17 +25,10 @@ export default function Home() {
         <div id="inhabitants-transition" className="relative w-full h-fit bg-obsidian-purple rounded-b-3xl">
           <div id='curved-cover' className='absolute -top-[20vh] w-full h-[25vh] bg-obsidian-purple rounded-t-[50%]'/>
           <div id='inhabitants-wrapper' className='h-[600vh] pt-[10vh]'>
-            <div id="inhabitants-section" className="sticky top-10 mt-[5vh] w-full h-screen flex flex-col items-center">
-              <h1 id="inhabitants-header" className=" text-4xl text-center w-fullt">Our Debut Mod<br /><strong className="text-6xl">Inhabitants</strong></h1>
-              <InhabitantsCarousel className="w-full flex flex-col items-center mt-10"></InhabitantsCarousel>
-              <div id="inhabitants-carousel-dots" className="absolute right-[20%] top-1/2 -translate-y-1/2 flex flex-col gap-3 z-20">
-                  {[0,1,2].map((_, i) => (
-                      <span
-                          key={i}
-                          className={`block w-3 h-3 rounded-full border-2 border-obsidian-deep bg-obsidian-purple-light`}
-                      />
-                  ))}
-              </div>
+            <div id="inhabitants-section" className="sticky top-5 mt-5 w-full h-screen flex flex-col items-center">
+              <h1 id="inhabitants-header" className=" text-4xl text-center w-full">Our Debut Mod<br /><strong className="text-6xl">Inhabitants</strong></h1>
+              <p id="inhabitants-description" className="text-center w-[80%] p-5"><strong>Inhabitants</strong> introduces a vibrant cast of original creatures to the world, each designed with unique behaviors, roles, and secrets to uncover. From mysterious denizens lurking in the shadows to helpful companions and formidable foes, every mob enriches the ecosystem with new interactions and challenges. Discover hidden lore, form unlikely alliances, and experience the world of Minecraft like never before as you unravel the stories behind its inhabitants.</p>
+              <InhabitantsCarousel className="w-full flex flex-col items-center mt-5"></InhabitantsCarousel>
             </div>
           </div>
         </div>
