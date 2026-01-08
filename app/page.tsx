@@ -6,8 +6,8 @@ import InhabitantsCarousel from "./components/InhabitantsCarousel";
 export default function Home() {
   return (
       <main>
-        <div id="intro" className="top-0 left-0 w-full h-[300vh]">
-          <PortalIntro className="sticky w-full h-screen top-0"></PortalIntro>
+        <div id="intro" className="w-full h-[screen]">
+          <PortalIntro className="w-full"></PortalIntro>
         </div>
         <div id="team" className="relative w-full h-[350vh] text-center flex flex-col items-center">
           <div

@@ -19,12 +19,13 @@ export default function PortalIntro( { className }: { className?: string } ) {
         if (!image) return;
 
 
-        const tween = gsap.to(image, {
+        const tween = gsap.to("#intro", {
             scrollTrigger: {
-                trigger: image,
+                trigger: "#intro",
                 start: "top top",
                 end: "top -200%",
                 scrub: true,
+                pin: true,
                 onUpdate: (self) => {
                     setProgress(self.progress);
                 },
