@@ -1,7 +1,7 @@
 "use client";
 
 import gsap from 'gsap'
-import { ScrollTrigger, SplitText, DrawSVGPlugin, MorphSVGPlugin, ScrambleTextPlugin } from 'gsap/all'
+import { ScrollTrigger, SplitText, DrawSVGPlugin, MorphSVGPlugin, Observer } from 'gsap/all'
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { ReactLenis, useLenis } from 'lenis/react'
 import Animate from './Animate';
@@ -9,8 +9,8 @@ import Animate from './Animate';
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(SplitText);
 gsap.registerPlugin(DrawSVGPlugin);
-gsap.registerPlugin(MorphSVGPlugin) 
-gsap.registerPlugin(ScrambleTextPlugin);
+gsap.registerPlugin(MorphSVGPlugin);
+gsap.registerPlugin(Observer);
 
 export default function AnimationProvider({ className }: { className: string }) {
     const lenisRef = useRef(null as any);
@@ -25,8 +25,8 @@ export default function AnimationProvider({ className }: { className: string }) 
         if (!hydrated) return;
 
         console.log(hydrated)
-        function update(time: number) {
-            lenisRef.current?.lenis?.raf(time * 1000)
+        function update() {
+            lenisRef.current?.lenis?.raf(performance.now());
         }
 
         gsap.ticker.add(update)
@@ -38,6 +38,7 @@ export default function AnimationProvider({ className }: { className: string }) 
         return () => {
             ScrollTrigger.killAll();
             gsap.ticker.remove(update)
+            Observer.getAll().forEach(observer => observer.kill());
         }
     }, [hydrated])
 

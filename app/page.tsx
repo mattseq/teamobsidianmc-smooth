@@ -5,8 +5,8 @@ import InhabitantsCarousel from "./components/InhabitantsCarousel";
 
 export default function Home() {
   return (
-      <main>
-        <div id="intro" className="w-full h-[screen]">
+      <main className="w-full min-h-screen m-0 p-0">
+        <div id="intro" className="w-full h-screen">
           <PortalIntro className="w-full"></PortalIntro>
         </div>
         <div id="team" className="relative w-full h-[350vh] text-center flex flex-col items-center">
@@ -20,7 +20,6 @@ export default function Home() {
           <img id="logo" src="/logo.png" className="w-[50%] mt-[20%] z-10" alt="Team Obsidian Logo" />
           <ParticleField className="absolute top-0 left-0 w-full h-[350vh] z-10"></ParticleField>
           <Team className="relative w-full h-screen mt-[30vh] z-20"></Team>
-          
         </div>
         <div id="inhabitants-transition" className="relative w-full h-fit bg-obsidian-purple rounded-b-3xl">
           <div id='curved-cover' className='absolute -top-[20vh] w-full h-[25vh] bg-obsidian-purple rounded-t-[50%]'/>
