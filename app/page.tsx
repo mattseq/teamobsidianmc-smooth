@@ -3,6 +3,7 @@ import ParticleField from "./components/ParticleField";
 import Team from "./components/Team";
 import InhabitantsCarousel from "./components/InhabitantsCarousel";
 import Footer from "./components/Footer";
+import Gallery from "./components/Gallery";
 
 export default function Home() {  
   return (
@@ -35,8 +36,10 @@ export default function Home() {
             
         </div>
 
+        <Gallery className="h-max bg-obsidian-deep"></Gallery>
+
         <footer>
-          <Footer></Footer>          
+          <Footer></Footer>
         </footer>
       </main>
   );
