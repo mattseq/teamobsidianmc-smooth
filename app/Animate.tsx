@@ -7,6 +7,15 @@ gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(Observer);
 
 export default function Animate() {
+    // Main Fade In
+    gsap.fromTo("#main",
+        { autoAlpha: 0 },
+        {
+            autoAlpha: 1,
+            duration: 1,
+            ease: "power1.inOut",
+        }
+    )
 
     // Logo Animation
     gsap.fromTo("#logo", 
@@ -18,7 +27,6 @@ export default function Animate() {
                 trigger: "#logo",
                 start: "top 90%",
                 end: "top 50%",
-                scrub: true,
             }
         }
     );
@@ -181,6 +189,35 @@ export default function Animate() {
         }
     });
 
+    // Gallery Section
+    gsap.fromTo("#gallery-header",
+        { y: 100, autoAlpha: 0 },
+        {
+            y: 0, autoAlpha: 1,
+            ease: "power2.out",
+            duration: 1,
+            scrollTrigger: {
+                trigger: "#gallery-header",
+                start: "top 100%",
+            }
+        }
+    )
+
+    document.querySelectorAll(".gallery-img").forEach((img, i) => {
+        gsap.fromTo(img,
+            { y: 100, autoAlpha: 0 },
+            {
+                y: 0, autoAlpha: 1,
+                ease: "power2.out",
+                duration: 1,
+                scrollTrigger: {
+                    trigger: img,
+                    start: "top 90%",
+                }
+            }
+        );
+    });
+
     // Footer
     document.querySelectorAll(".icon").forEach((icon) => {
         Observer.create({
@@ -194,5 +231,16 @@ export default function Animate() {
         });
     });
 
-    
+    gsap.fromTo("#footer", 
+        { autoAlpha: 0 },
+        {
+            autoAlpha: 1,
+            ease: "power2.out",
+            duration: 1,
+            scrollTrigger: {
+                trigger: "#footer",
+                start: "top bottom",
+            }
+        }
+    )
 }
