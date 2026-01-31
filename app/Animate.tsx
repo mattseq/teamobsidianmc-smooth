@@ -117,10 +117,10 @@ export default function Animate() {
                 if (dots) {
                     Array.from(dots).forEach((dot, i) => {
                         if (i === cardIndex) {
-                            dot.classList.add("bg-obsidian-purple", "scale-125", "border-obsidian-black");
+                            dot.classList.add("bg-white", "scale-125", "border-obsidian-black");
                             dot.classList.remove("bg-obsidian-purple-light", "border-obsidian-deep");
                         } else {
-                            dot.classList.remove("bg-obsidian-purple", "scale-125", "border-obsidian-black");
+                            dot.classList.remove("bg-white", "scale-125", "border-obsidian-black");
                             dot.classList.add("bg-obsidian-purple-light", "border-obsidian-deep");
                         }
                     });

@@ -1,14 +1,10 @@
-"use client";
-
 import PortalIntro from "./components/PortalIntro";
 import ParticleField from "./components/ParticleField";
 import Team from "./components/Team";
 import InhabitantsCarousel from "./components/InhabitantsCarousel";
-import { useLenis } from "lenis/react";
+import Footer from "./components/Footer";
 
-export default function Home() {
-  const lenis = useLenis();
-  
+export default function Home() {  
   return (
       <main className="w-full min-h-screen m-0 p-0">
         <div id="intro" className="w-full h-screen">
@@ -16,13 +12,13 @@ export default function Home() {
         </div>
         <div id="team" className="relative w-full h-[350vh] text-center flex flex-col items-center">
           <div
-            className="sticky w-full top-[90vh] h-[50vh] rounded-full"
+            className="sticky w-full top-[90vh] h-[50vh] rounded-t-full z-25"
             style={{
                 background: "radial-gradient(circle, var(--obsidian-glass-outline) 0%, transparent 100%)",
                 filter: "blur(100px)",
             }}
           />
-          <img id="logo" src="/logo.png" className="w-[50%] mt-[20%] z-10" alt="Team Obsidian Logo" />
+          <img id="logo" src="/logo.png" className="w-[50%] mt-[20%] z-15" alt="Team Obsidian Logo" />
           <ParticleField className="absolute top-0 left-0 w-full h-[350vh] z-10"></ParticleField>
           <Team className="relative w-full h-screen mt-[30vh] z-20"></Team>
         </div>
@@ -36,41 +32,11 @@ export default function Home() {
         </div>
 
         <div id="trinkets" className="w-full h-[300vh] bg-obsidian-black ">
-
+            
         </div>
 
         <footer>
-          <div className="w-full bg-obsidian-glass-outline flex flex-row items-center px-6 py-4 gap-4">
-            <div className="flex flex-row items-center gap-6">
-              {/* Logo or Brand */}
-              <img src="/logo.png" alt="Team Obsidian Logo" className="w-20" />
-              {/* Navigation Links */}
-              <nav className="flex gap-6">
-                <a href="#logo" onClick={() => lenis?.scrollTo("#team")} className="text-white hover:underline">Team</a>
-                <a href="#inhabitants-section" onClick={() => lenis?.scrollTo("#inhabitants-section")} className="text-white hover:underline">Inhabitants</a>
-                <a href="#trinkets" onClick={() => lenis?.scrollTo("#trinkets")} className="text-white hover:underline">Trinkets</a>
-              </nav>
-            </div>
-            <div className="flex flex-row items-center ml-auto gap-6">
-              {/* Social Links */}
-              <div className="flex gap-4">
-                <a className="icon" href="https://discord.gg/yourdiscord" target="_blank" rel="noopener noreferrer" aria-label="Discord">
-                  <img width="50" height="50" src="icons/icons8-discord.svg" alt="discord-logo--v1" className="h-6 w-6"/>
-                </a>
-                <a className="icon" href="https://twitter.com/yourtwitter" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                  <img width="50" height="50" src="/icons/icons8-x.svg" alt="twitterx--v2" className="h-6 w-6" />
-                </a>
-                <a className="icon" href="https://github.com/yourgithub" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                  <img width="50" height="50" src="/icons/icons8-github-logo.svg" alt="github--v1" className="h-6 w-6"/>
-                </a>
-              </div>
-              {/* Legal/Contact */}
-              <div className="text-xs text-gray-300 text-center md:text-right">
-                <p>© 2026 Team Obsidian. All rights reserved.</p>
-              </div>
-            </div>
-            
-          </div>
+          <Footer></Footer>          
         </footer>
       </main>
   );
