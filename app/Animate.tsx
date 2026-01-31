@@ -180,4 +180,19 @@ export default function Animate() {
             });
         }
     });
+
+    // Footer
+    document.querySelectorAll(".icon").forEach((icon) => {
+        Observer.create({
+            target: icon,
+            onHover: (e) => {
+                gsap.to(e.target, { scale: 1.2, duration: 0.3, ease: "power2.out" });
+            },
+            onHoverEnd: (e) => {
+                gsap.to(e.target, { scale: 1, duration: 0.3, ease: "power2.out" });
+            }
+        });
+    });
+
+    
 }

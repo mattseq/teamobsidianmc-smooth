@@ -48,6 +48,6 @@ export default function AnimationProvider({ className }: { className: string }) 
     }
 
     return (
-        <ReactLenis ref={lenisRef} options={{ smoothWheel: true }} className={className} />
+        <ReactLenis ref={lenisRef} options={{ smoothWheel: true, anchors: true }} className={className} />
     )
 }
