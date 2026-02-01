@@ -15,6 +15,7 @@ export default function Footer({ className }: { className?: string }) {
                 <a href="#logo" onClick={() => lenis?.scrollTo("#team")} className="text-white hover:underline">Team</a>
                 <a href="#inhabitants-section" onClick={() => lenis?.scrollTo("#inhabitants-section")} className="text-white hover:underline">Inhabitants</a>
                 <a href="#trinkets" onClick={() => lenis?.scrollTo("#trinkets")} className="text-white hover:underline">Trinkets</a>
+                <a href="#gallery-header" onClick={() => lenis?.scrollTo("#gallery-header")} className="text-white hover:underline">Gallery</a>
               </nav>
             </div>
             <div className="flex flex-row items-center ml-auto gap-6">

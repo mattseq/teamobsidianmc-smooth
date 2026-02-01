@@ -5,7 +5,7 @@ import InhabitantsCarousel from "./components/InhabitantsCarousel";
 import Footer from "./components/Footer";
 import Gallery from "./components/Gallery";
 
-export default function Home() {  
+export default function Home() {
   return (
       <main id="main" className="w-full min-h-screen m-0 p-0">
         <div id="intro" className="w-full h-screen">
