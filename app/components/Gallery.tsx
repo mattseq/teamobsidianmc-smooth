@@ -1,9 +1,17 @@
-import React from "react";
 import path from "path";
 import fs from "fs";
 
+let cachedImages: string[] | null = null;
+
+function getImages() {
+    if (!cachedImages) {
+        cachedImages = fs.readdirSync(path.join(process.cwd(), "/public/gallery")).map(file => `/gallery/${file}`);
+    }
+    return cachedImages;
+}
+
 export default function Gallery({ className }: { className?: string }) {
-    const images = fs.readdirSync(path.join(process.cwd(), "/public/gallery")).map(file => `/gallery/${file}`);
+    const images = getImages();
 
     return (
         <div className={`w-full p-4 ${className}`}>
@@ -12,13 +20,11 @@ export default function Gallery({ className }: { className?: string }) {
                 {images.map((src, i) => (
                 <a href={src} key={i} target="_blank" rel="noopener noreferrer">
                     <img
-                        
                         src={src}
                         alt={`Concept art ${i + 1}`}
                         className="gallery-img block mb-4 rounded-lg shadow-lg break-inside-avoid"
                     />
                 </a>
-                
                 ))}
             </div>
         </div>
