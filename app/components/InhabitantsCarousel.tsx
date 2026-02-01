@@ -15,7 +15,7 @@ export default function InhabitantsCarousel({ className }: { className?: string 
                 ))
             }
             <div id="inhabitants-carousel-dots" className="absolute right-[20%] top-[25vh] flex flex-col gap-3 z-20">
-                  {[0,1,2].map((_, i) => (
+                  {mobs.map((_, i) => (
                       <span
                           key={i}
                           className={`block w-3 h-3 rounded-full border-2 border-obsidian-deep bg-obsidian-purple-light`}
