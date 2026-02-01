@@ -199,6 +199,7 @@ export default function Animate() {
             scrollTrigger: {
                 trigger: "#gallery-header",
                 start: "top 100%",
+                once: true
             }
         }
     )
@@ -213,9 +214,19 @@ export default function Animate() {
                 scrollTrigger: {
                     trigger: img,
                     start: "top 90%",
+                    once: true
                 }
             }
         );
+        Observer.create({
+            target: img,
+            onHover: (e) => {
+                gsap.to(e.target, { scale: 1.05, duration: 0.3, ease: "power2.out" });
+            },
+            onHoverEnd: (e) => {
+                gsap.to(e.target, { scale: 1, duration: 0.3, ease: "power2.out" });
+            }
+        });
     });
 
     // Footer
@@ -240,6 +251,7 @@ export default function Animate() {
             scrollTrigger: {
                 trigger: "#footer",
                 start: "top bottom",
+                once: true,
             }
         }
     )
