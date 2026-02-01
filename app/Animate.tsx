@@ -102,50 +102,24 @@ export default function Animate() {
     const carousel = document.getElementById("inhabitants-carousel");
     if (carousel) {
         const cards = Array.from(carousel.getElementsByClassName("mob-card"));
-        const dots = document.getElementById("inhabitants-carousel-dots")?.children;
-        gsap.set(carousel, { perspective: 1200 });
-        cards.forEach((card, i) => {
-            gsap.set(card, {
-                opacity: i === 0 ? 1 : 0
-            });
-        });
 
-        ScrollTrigger.create({
-            trigger: "#inhabitants-section",
-            start: "top 3%",
-            end: "top -300%",
-            scrub: true,
-            pin: true,
-            onUpdate: (self) => {
-                const progress = self.progress;
-                const totalCards = cards.length;
-                const cardIndex = Math.min(Math.floor(progress * totalCards), totalCards - 1);
+        const card_width = cards[0].getBoundingClientRect().width
 
-                // Update dots
-                if (dots) {
-                    Array.from(dots).forEach((dot, i) => {
-                        if (i === cardIndex) {
-                            dot.classList.add("bg-white", "scale-125", "border-obsidian-black");
-                            dot.classList.remove("bg-obsidian-purple-light", "border-obsidian-deep");
-                        } else {
-                            dot.classList.remove("bg-white", "scale-125", "border-obsidian-black");
-                            dot.classList.add("bg-obsidian-purple-light", "border-obsidian-deep");
-                        }
-                    });
+        gsap.fromTo(cards, 
+            { xPercent: card_width / 2 },
+            {
+                xPercent: -100 * (cards.length - 1 ) - (card_width / 2),
+                ease: "none",
+                scrollTrigger: {
+                    trigger: "#inhabitants-section",
+                    start: "top 3%",
+                    end: "bottom -350%",
+                    scrub: 1.5,
+                    pin: true,
+                    anticipatePin: 1,
                 }
-
-                // Animate cards
-                cards.forEach((card, i) => {
-                    if (i < cardIndex) {
-                        gsap.to(card, { rotateX: -90, opacity: 0, duration: 1, ease: "power2.out" });
-                    } else if (i === cardIndex) {
-                        gsap.to(card, { rotateX: 0, opacity: 1, duration: 1, ease: "power2.out" });
-                    } else {
-                        gsap.to(card, { rotateX: 90, opacity: 0, duration: 1, ease: "power2.out" });
-                    }
-                });
             }
-        });
+        );
     }
     
     // Inhabitants Description Text Animation
@@ -213,8 +187,9 @@ export default function Animate() {
                 duration: 1,
                 scrollTrigger: {
                     trigger: img,
-                    start: "top 90%",
-                    once: true
+                    start: "top 100%",
+                    end: "top 70%",
+                    scrub: 0.5,
                 }
             }
         );

@@ -11,17 +11,9 @@ export default function InhabitantsCarousel({ className }: { className?: string 
         <div className={className} id="inhabitants-carousel">
             {
                 mobs.map((mob) => (
-                    <Image src={mob.image} alt={mob.name} key={mob.name} className="absolute mob-card w-[50vw] mb-4 rounded-lg" width={900} height={600}/>
+                    <Image src={mob.image} alt={mob.name} key={mob.name} className="mob-card w-[50vw] mb-4 rounded-lg" width={900} height={600}/>
                 ))
             }
-            <div id="inhabitants-carousel-dots" className="absolute right-[20%] top-[25vh] flex flex-col gap-3 z-20">
-                  {mobs.map((_, i) => (
-                      <span
-                          key={i}
-                          className={`block w-3 h-3 rounded-full border-2 border-obsidian-deep bg-obsidian-purple-light`}
-                      />
-                  ))}
-              </div>
         </div>
     );
 }
