@@ -1,7 +1,7 @@
 "use client";
 
 import gsap from 'gsap'
-import { ScrollTrigger, SplitText, DrawSVGPlugin, MorphSVGPlugin, ScrambleTextPlugin, Observer } from 'gsap/all'
+import { ScrollTrigger, SplitText, DrawSVGPlugin, MorphSVGPlugin, ScrambleTextPlugin, Observer, Flip } from 'gsap/all'
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(Observer);
@@ -112,7 +112,7 @@ export default function Animate() {
                 ease: "none",
                 scrollTrigger: {
                     trigger: "#inhabitants-section",
-                    start: "top 3%",
+                    start: "top 0%",
                     end: "bottom -350%",
                     scrub: 1.5,
                     pin: true,

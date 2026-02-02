@@ -13,7 +13,7 @@ export default function Home() {
         </div>
         <div id="team" className="relative w-full h-[350vh] text-center flex flex-col items-center">
           <div
-            className="sticky w-full top-[90vh] h-[50vh] rounded-t-full z-25"
+            className="sticky w-full top-[90vh] h-[50vh] rounded-t-full z-25 pointer-events-none"
             style={{
                 background: "radial-gradient(circle, var(--obsidian-glass-outline) 0%, transparent 100%)",
                 filter: "blur(100px)",
@@ -26,7 +26,7 @@ export default function Home() {
         <div id="inhabitants-transition" className="relative w-full h-fit bg-obsidian-purple rounded-b-3xl">
           <div id='curved-cover' className='absolute -top-[20vh] w-full h-[25vh] bg-obsidian-purple rounded-t-[50%]'/>
           <div id="inhabitants-section" className="mt-5 w-full h-screen flex flex-col items-center">
-            <h1 id="inhabitants-header" className=" text-4xl text-center w-full">Our Debut Mod<br /><strong className="text-6xl">Inhabitants</strong></h1>
+            <h1 id="inhabitants-header" className="mt-5 text-4xl text-center w-full">Our Debut Mod<br /><strong className="text-6xl">Inhabitants</strong></h1>
             <p id="inhabitants-description" className="text-center w-[40%] p-5"><strong>Inhabitants</strong> introduces a vibrant cast of original creatures, each designed with unique behaviors and secrets to uncover. Discover hidden lore, unexpected interactions, and creatures that feel right at home in Minecraft.</p>
             <InhabitantsCarousel className="w-full flex flex-row items-center gap-5 mt-5 overflow-x-hidden"></InhabitantsCarousel>
           </div>
