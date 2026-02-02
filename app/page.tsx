@@ -27,7 +27,7 @@ export default function Home() {
           <div id='curved-cover' className='absolute -top-[20vh] w-full h-[25vh] bg-obsidian-purple rounded-t-[50%]'/>
           <div id="inhabitants-section" className="mt-5 w-full h-screen flex flex-col items-center">
             <h1 id="inhabitants-header" className=" text-4xl text-center w-full">Our Debut Mod<br /><strong className="text-6xl">Inhabitants</strong></h1>
-            <p id="inhabitants-description" className="text-center w-[80%] p-5"><strong>Inhabitants</strong> introduces a vibrant cast of original creatures to the world, each designed with unique behaviors, roles, and secrets to uncover. From mysterious denizens lurking in the shadows to helpful companions and formidable foes, every mob enriches the ecosystem with new interactions and challenges. Discover hidden lore, form unlikely alliances, and experience the world of Minecraft like never before as you unravel the stories behind its inhabitants.</p>
+            <p id="inhabitants-description" className="text-center w-[40%] p-5"><strong>Inhabitants</strong> introduces a vibrant cast of original creatures, each designed with unique behaviors and secrets to uncover. Discover hidden lore, unexpected interactions, and creatures that feel right at home in Minecraft.</p>
             <InhabitantsCarousel className="w-full flex flex-row items-center gap-5 mt-5 overflow-x-hidden"></InhabitantsCarousel>
           </div>
         </div>
