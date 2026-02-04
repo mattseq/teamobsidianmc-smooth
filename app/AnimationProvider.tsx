@@ -24,7 +24,6 @@ export default function AnimationProvider({ className }: { className: string }) 
         // hydration check
         if (!hydrated) return;
 
-        console.log(hydrated)
         function update() {
             lenisRef.current?.lenis?.raf(performance.now());
         }

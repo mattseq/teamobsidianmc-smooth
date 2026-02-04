@@ -7,7 +7,7 @@ import { useEffect, useRef, useState } from 'react'
 
 gsap.registerPlugin(ScrollTrigger);
 
-const frameCount = 31;
+const frameCount = 135;
 
 const images = Array.from({ length: frameCount }, (_, i) => 
     `/portal_animation/${(i + 1).toString().padStart(4, '0')}.png`
@@ -40,8 +40,8 @@ export default function PortalIntro( { className }: { className?: string } ) {
         imgs = images.map((src, i) => {
             const img = new Image();
             img.src = src;
+            // render first image when loaded
             i || (img.onload = render);
-            console.log(`Preloading image: ${i}`);
             return img;
         });
         
@@ -56,8 +56,7 @@ export default function PortalIntro( { className }: { className?: string } ) {
                 scrub: true,
                 pin: true,
                 pinnedContainer: "#intro",
-                onUpdate: render,
-                markers: true,
+                onUpdate: render
             },
         })
     }, []);
