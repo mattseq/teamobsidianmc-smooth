@@ -42,7 +42,7 @@ const team = [
   },
 ];
 
-export default function Team({ className }: { className: string }) {
+export default function TeamCards({ className }: { className: string }) {
     return (
         <div className={`${className}`}>
             {team.map((member) => (

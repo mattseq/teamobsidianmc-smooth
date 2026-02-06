@@ -13,7 +13,7 @@ const images = Array.from({ length: frameCount }, (_, i) =>
     `/portal_animation/${(i + 1).toString().padStart(4, '0')}.png`
 );
 
-export default function PortalIntro( { className }: { className?: string } ) {
+export default function Intro( { className }: { className?: string } ) {
     const canvasRef = useRef<HTMLCanvasElement>(null);
 
     useEffect(() => {
@@ -60,13 +60,16 @@ export default function PortalIntro( { className }: { className?: string } ) {
             },
         })
     }, []);
+
     return (
-        <canvas 
-            className={className}
-            id="portal-canvas"
-            ref={canvasRef}
-            width={1920}
-            height={950}
-        />
-    );
+        <div id="intro" className="w-full h-screen">
+            <canvas 
+                className="w-full"
+                id="portal-canvas"
+                ref={canvasRef}
+                width={1920}
+                height={950}
+            />
+        </div>
+    )
 }

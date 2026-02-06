@@ -6,7 +6,7 @@ export default function Footer({ className }: { className?: string }) {
     const lenis = useLenis();
 
     return (
-        <div className="w-full bg-obsidian-glass-outline flex flex-row items-center px-6 py-4 gap-4">
+        <footer id="footer" className="w-full bg-obsidian-glass-outline flex flex-row items-center px-6 py-4 gap-4">
             <div className="flex flex-row items-center gap-6">
               {/* Logo */}
               <img src="/logo.png" alt="Team Obsidian Logo" className="w-30" />
@@ -36,6 +36,6 @@ export default function Footer({ className }: { className?: string }) {
                 <p>© 2026 Team Obsidian. All rights reserved.</p>
               </div>
             </div>
-        </div>
+        </footer>
     )
 }
