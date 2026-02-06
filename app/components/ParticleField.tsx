@@ -6,19 +6,7 @@ import { useEffect, useRef, useState, useMemo } from 'react'
 
 gsap.registerPlugin(ScrollTrigger);
 
-const images = [
-    '/galactic_alphabet/A.webp',
-    '/galactic_alphabet/B.webp',
-    '/galactic_alphabet/C.webp',
-    '/galactic_alphabet/D.webp',
-    '/galactic_alphabet/E.webp',
-    '/galactic_alphabet/F.webp',
-    '/galactic_alphabet/G.webp',
-    '/galactic_alphabet/H.webp',
-    '/galactic_alphabet/I.webp',
-];
-
-const PARTICLE_COUNT = 100;
+const PARTICLE_COUNT = 70;
 
 export default function ParticleField( { className }: { className?: string } ) {
     const [hydrated, setHydrated] = useState(false);
@@ -30,12 +18,11 @@ export default function ParticleField( { className }: { className?: string } ) {
     const particles = useMemo(() => 
         hydrated ? (
             Array.from({ length: PARTICLE_COUNT }, (_, i) => ({
-                src: images[Math.floor(Math.random() * images.length)],
                 style: {
                     position: 'absolute' as const,
                     top: `${Math.random() * 80 + 10}%`,
                     left: `${Math.random() * 80 + 10}%`,
-                    width: `${1*Math.random() + 1}%`,
+                    width: `${0.7*Math.random()}%`,
                     zIndex: 0,
                 },
                 id: `particle-${i}`
@@ -50,13 +37,13 @@ export default function ParticleField( { className }: { className?: string } ) {
             gsap.to(
                 `#particle-${i}`,
                 {
-                    y: Math.random() * 400 - 300,
+                    y: Math.random() * 600 - 300,
                     ease: "sine.inOut",
                     scrollTrigger: {
                         trigger: "#team",
                         start: "top 100%",
-                        end: "top -300%",
-                        scrub: true,
+                        end: "top -250%",
+                        scrub: 1.5,
                     }
                 }
             );
@@ -70,14 +57,13 @@ export default function ParticleField( { className }: { className?: string } ) {
     return (
         <div className={`${className}`}>
             {particles.map((particle, i) => (
-                <img
-                    key={i}
-                    src={particle.src}
-                    alt="Galactic Alphabet Particle"
-                    style={particle.style}
-                    className='particle'
-                    id={particle.id}
-                />
+                <div key={i} id={particle.id} className='particle aspect-square rounded-full bg-obsidian-purple'
+                    style={{
+                        ...particle.style,
+                        background: 'var(--obsidian-purple)',
+                        boxShadow: '0 0 24px 8px var(--accent-glow)'
+                    }}
+                ></div>
             ))}
         </div>
     );
