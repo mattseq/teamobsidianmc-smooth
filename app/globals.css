@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
   --obsidian-black: #0b0b0f;
@@ -37,13 +37,14 @@
   --color-obsidian-glass-outline: var(--obsidian-glass-outline);
 }
 
-html, body {
+html,
+body {
   width: 100%;
   margin: 0;
   padding: 0;
   background: var(--obsidian-black);
   color: var(--text-main);
-  font-family: "Ubuntu", sans-serif;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 ::-webkit-scrollbar {
