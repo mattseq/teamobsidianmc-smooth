@@ -22,8 +22,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={`${ubuntu.variable} antialiased`}>
-        <AnimationProvider className='w-full h-full m-0 p-0' />
-        {children}
+        <AnimationProvider className='w-full h-full m-0 p-0'>{children}</AnimationProvider>
       </body>
     </html>
   );

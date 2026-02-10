@@ -12,8 +12,8 @@ gsap.registerPlugin(DrawSVGPlugin);
 gsap.registerPlugin(MorphSVGPlugin);
 gsap.registerPlugin(Observer);
 
-export default function AnimationProvider({ className }: { className: string }) {
-  const lenisRef = useRef(null as any);
+export default function AnimationProvider({ className, children }: { className: string; children?: React.ReactNode }) {
+  const lenisRef = useRef<any>(null);
   const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {
@@ -30,8 +30,6 @@ export default function AnimationProvider({ className }: { className: string }) 
 
     gsap.ticker.add(update);
 
-    // Animate();
-
     Animate();
 
     return () => {
@@ -39,12 +37,12 @@ export default function AnimationProvider({ className }: { className: string }) 
       gsap.ticker.remove(update);
       Observer.getAll().forEach((observer) => observer.kill());
     };
-  }, [hydrated]);
+  }, []);
 
-  // hydration check to prevent SSR issues and gsap from running before dom is ready
-  if (!hydrated) {
-    return null;
-  }
-
-  return <ReactLenis ref={lenisRef} options={{ smoothWheel: true, anchors: true }} className={className} />;
+  return (
+    <>
+      <ReactLenis ref={lenisRef} options={{ smoothWheel: true, anchors: true }} className={className} />
+      {children}
+    </>
+  );
 }
