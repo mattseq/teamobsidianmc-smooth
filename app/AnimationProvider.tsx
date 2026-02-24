@@ -37,7 +37,7 @@ export default function AnimationProvider({ className, children }: { className: 
       gsap.ticker.remove(update);
       Observer.getAll().forEach((observer) => observer.kill());
     };
-  }, []);
+  }, [hydrated]);
 
   return (
     <>
