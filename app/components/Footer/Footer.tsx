@@ -23,13 +23,6 @@ export default function Footer({ className }: { className?: string }) {
             Inhabitants
           </a>
           <a
-            href='#trinkets'
-            onClick={() => lenis?.scrollTo('#trinkets')}
-            className='text-white text-lg hover:underline'
-          >
-            Trinkets
-          </a>
-          <a
             href='#gallery-header'
             onClick={() => lenis?.scrollTo('#gallery-header')}
             className='text-white text-lg hover:underline'

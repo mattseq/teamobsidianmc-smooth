@@ -13,8 +13,6 @@ export default function Home() {
 
       <InhabitantsSection></InhabitantsSection>
 
-      <div id='trinkets' className='w-full h-[300vh] bg-obsidian-black '></div>
-
       <Gallery className='h-max bg-obsidian-deep'></Gallery>
 
       <Footer></Footer>
